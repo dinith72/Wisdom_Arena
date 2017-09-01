@@ -208,10 +208,11 @@
                                                 </AnchorPane>
                                               <AnchorPane fx:id="deleteSubject" minHeight="0.0" minWidth="0.0" prefHeight="638.0" prefWidth="721.0">
                                                    <children>
-                                                      <ComboBox fx:id="cmbSubjects" layoutX="71.0" layoutY="84.0" prefHeight="36.0" prefWidth="238.0" />
-                                                      <ListView layoutX="71.0" layoutY="149.0" prefHeight="312.0" prefWidth="452.0" />
+                                                      <ComboBox fx:id="cmbSubjects" layoutX="71.0" layoutY="84.0" onAction="#cmbSubjectsSelected" prefHeight="36.0" prefWidth="238.0" />
+                                                      <ListView fx:id="subjectsList" layoutX="71.0" layoutY="149.0" prefHeight="312.0" prefWidth="452.0" />
                                                       <Label layoutX="71.0" layoutY="35.0" prefHeight="31.0" prefWidth="170.0" text="Add new Subject" />
                                                       <Button fx:id="btnSubmit" layoutX="397.0" layoutY="507.0" mnemonicParsing="false" onAction="#btnSubmitClicked" prefHeight="57.0" prefWidth="126.0" text="Submit" />
+                                                      <Button fx:id="btnDeleteSubject" layoutX="460.0" layoutY="84.0" mnemonicParsing="false" onAction="#setBtnDeleteSubject" text="Delete" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="84.0" />
                                                    </children>
                                                 </AnchorPane>
                                             </items>

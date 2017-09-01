@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.event.ActionEvent;
 //import java.sql.*;
+import javax.security.auth.Subject;
 import javax.swing.*;
 import javax.xml.soap.SOAPPart;
 import java.net.URL;
@@ -154,7 +155,13 @@ public class Controller implements Initializable
     public Button btnSubmit = new Button();
 
     @FXML
+    public Button btnDeleteSubject = new Button();
+
+    @FXML
     public Label adminFee = new Label();
+
+    @FXML
+    public ListView<String> subjectsList = new ListView();
 
 
 
@@ -225,12 +232,12 @@ public class Controller implements Initializable
     //student regestration pannel
         cmbGenderStu.getItems().addAll("Miss","Master");
         cmbGenderGuardian.getItems().addAll("Mr","Mrs","Ms");
-        grade.getItems().addAll("7" , "8" , "9" , "10" , "11" , "12");
+        grade.getItems().addAll("6","7" , "8" , "9" , "10" , "11" , "12" ,"13");
         syllabus.getItems().addAll("National" , "Edexcel" , "Cambridge");
         cmbSubjects.getItems().addAll("Chemistry Theory" ,"Chemistry Practical" ,
                                             "Biology Theory","Biology Practical",
                                             "Physics Theory" , "Physics Practical",
-                                            "Mathematics" , "English");
+                                            "Mathematics" , "English","Science");
 
     // end of student regestration pannel
     // bill generation pannel
@@ -244,6 +251,7 @@ public class Controller implements Initializable
 
     }
 
+    @FXML
     public void btnSubmitClicked()
     {
         Student stu = new Student();
@@ -505,6 +513,38 @@ public class Controller implements Initializable
 
     }
 
+    @FXML
+    private void cmbSubjectsSelected(ActionEvent event)
+    {
+        Subjects sub = new Subjects();
+        String strsub = cmbSubjects.getValue().toString();
+//        JOptionPane.showMessageDialog(null,strsub);
+
+        sub.setStuId(txtStuId.getText());
+        sub.setSubject(strsub);
+        boolean add = sub.addToDatabse();
+
+        if (add) {
+            subjectsList.getItems().add(strsub); // adding to the list view
+        }
+
+
+    }
+
+    @FXML
+    private void setBtnDeleteSubject(ActionEvent event)
+    {
+        Subjects sub = new Subjects();
+        sub.setStuId(txtStuId.getText());
+       String subDelete =  subjectsList.getSelectionModel().getSelectedItem();
+       int itemPos = subjectsList.getSelectionModel().getSelectedIndex();
+       JOptionPane.showMessageDialog(null, subDelete);
+       boolean delete = sub.deleteFromDatabase(subDelete);
+
+       if(delete)
+           subjectsList.getItems().remove(itemPos);
+    }
+
     private void fillForm(String id)
     {
         clearAll();
@@ -540,6 +580,31 @@ public class Controller implements Initializable
                 if(st.matches("inactive")) {
                     inactive.setSelected(true);
                     active.setSelected(false);
+                }
+
+//                adding guardian details to the form
+                PreparedStatement prg = con.prepareStatement("SELECT `Gender`, `First name`, `Middle name`," +
+                        " `Last name`, `Mobile no`, `Home no`, `Office no`, `email` FROM `guardian` WHERE `Stu_Id` = ?;");
+                prg.setString(1,id);
+                ResultSet rsg = prg.executeQuery();
+                while(rsg.next())
+                {
+                    cmbGenderGuardian.setValue(rsg.getString(1));
+                    txtFirstNameGuardian.setText(rsg.getString(2));
+                    txtMiddleNameGuardian.setText(rsg.getString(3));
+                    txtLastNameGuardian.setText(rsg.getString(4));
+                    txtContactnoMobileGuardian.setText(rsg.getString(5));
+                    txtContactnoHomeGuardian.setText(rsg.getString(6));
+                    txtContactnoOfficeGuardian.setText(rsg.getString(7));
+                    txtEmailGuardian.setText(rsg.getString(8));
+                }
+
+                PreparedStatement prs = con.prepareStatement("SELECT `subject` FROM `stu_subjects` WHERE `Stu_Id` = ? ");
+                prs.setString(1,id);
+                ResultSet rsSub = prs.executeQuery();
+                while (rsSub.next())
+                {
+                    subjectsList.getItems().add(rsSub.getString(1));
                 }
             }
 
@@ -593,6 +658,9 @@ public class Controller implements Initializable
         refDeposit.setText("");
         adminFee.setText("");
 
+        cmbSubjects.setValue(null);
+        subjectsList.getItems().clear();
+
 //        regestration guardian details
         cmbGenderGuardian.setValue(null);
         txtFirstNameGuardian.setText("");
@@ -602,6 +670,7 @@ public class Controller implements Initializable
         txtContactnoHomeGuardian.setText("");
         txtContactnoOfficeGuardian.setText("");
         txtEmailGuardian.setText("");
+
 
 
     }
