@@ -1,17 +1,28 @@
 package sample;
 
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.event.ActionEvent;
 //import java.sql.*;
 import javax.security.auth.Subject;
 import javax.swing.*;
 import javax.xml.soap.SOAPPart;
+import java.awt.*;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
@@ -26,6 +37,10 @@ import org.controlsfx.control.textfield.TextFields ;
 public class Controller implements Initializable
 {
     List <String> stuNos = new ArrayList<String>();
+    double billTotal = 0 ;
+    ObservableList<Referance> ref = FXCollections.observableArrayList(
+    );
+
     @FXML
     SplitPane splitPane = new SplitPane();
 
@@ -171,8 +186,8 @@ public class Controller implements Initializable
     @FXML
     public Label lblDateBill = new Label();
 
-    @FXML
-    public ComboBox cmbAdminNOBill = new ComboBox();
+   @FXML
+   public TextField txtStuIdBill = new TextField();
 
     @FXML
     public Label lblNameBill = new Label();
@@ -187,13 +202,47 @@ public class Controller implements Initializable
     public Label lblSyllabusBill = new Label();
 
     @FXML
-    public Button btnAddtoTableBill = new Button();
+    public Label lblRefDeposit = new Label();
+
+    @FXML
+    public TextField txtRefDepAmnt = new TextField();
+
+    @FXML
+    public  Button btnEditBill = new Button();
+
+    @FXML
+    public  Button btnSaveBill = new Button();
 
     @FXML
     public ComboBox cmbSubjectBill = new ComboBox();
 
     @FXML
+    public  ComboBox cmbPaymentMethod = new ComboBox();
+
+    @FXML
+    public  TextArea txtDescription = new TextArea();
+
+    @FXML
     public  TextField txtAmountBill = new TextField();
+
+    @FXML
+    public TableView <Referance> tablePayments  = new TableView<Referance>();
+
+    @FXML
+    public TableColumn<Referance,String> refIdCol = new TableColumn();
+
+    @FXML
+    public TableColumn< Referance ,String> subjectCol = new TableColumn();
+
+    @FXML
+    public TableColumn<Referance,Double> amountCol = new TableColumn();
+
+
+    @FXML
+    public Button btnAddtoTableBill = new Button();
+
+    @FXML
+    public Button btnDeleteTabel = new Button();
 
     @FXML
     public Label lblTotalBill = new Label();
@@ -228,6 +277,7 @@ public class Controller implements Initializable
 //        student menu pannel items
 
         TextFields.bindAutoCompletion(txtStuId,stuNos);
+        TextFields.bindAutoCompletion(txtStuIdBill,stuNos);
 
     //student regestration pannel
         cmbGenderStu.getItems().addAll("Miss","Master");
@@ -242,12 +292,23 @@ public class Controller implements Initializable
     // end of student regestration pannel
     // bill generation pannel
         cmbMonthBill.getItems().addAll("January","February","March","April","May"
-                ,"June","July","August","Septhember","Octomebr","November","December");
+                ,"June","July","August","September","October","November","December");
     //report generating pannel
         cmbMonthReport.getItems().addAll("January","February","March","April","May"
-                ,"June","July","August","Septhember","Octomebr","November","December");
+                ,"June","July","August","September","October","November","December");
 
         cmbYearReport.getItems().addAll("2017","2018","2019");
+
+    // date in the bill generator form
+    LocalDate localDate = LocalDate.now();
+    lblDateBill.setText(localDate.toString());
+
+    // methods payments in the
+        cmbPaymentMethod.getItems().addAll("Cash","Cheque","Bamk Deposit Slip");
+
+        //diabloing the refundale deposit amounts
+        btnSaveBill.setVisible(false);
+        txtRefDepAmnt.setVisible(false);
 
     }
 
@@ -404,7 +465,7 @@ public class Controller implements Initializable
     @FXML
     public void menuStuRegClicked(ActionEvent event)
     {
-        JOptionPane.showMessageDialog(null,"student regestration");
+//        JOptionPane.showMessageDialog(null,"student regestration");
         StuReg.setVisible(true);
         BillGenerator.setVisible(false);
         Reports.setVisible(false);
@@ -413,7 +474,7 @@ public class Controller implements Initializable
     @FXML
     public void menuReportClicked(ActionEvent event)
     {
-        JOptionPane.showMessageDialog(null,"Report");
+//        JOptionPane.showMessageDialog(null,"Report");
         StuReg.setVisible(false);
         BillGenerator.setVisible(false);
         Reports.setVisible(true);
@@ -422,7 +483,7 @@ public class Controller implements Initializable
     @FXML
     private void menuBillGenerateClicked(ActionEvent event)
     {
-        JOptionPane.showMessageDialog(null,"Bill Generate");
+//        JOptionPane.showMessageDialog(null,"Bill Generate");
         BillGenerator.setVisible(true);
         StuReg.setVisible(false);
         Reports.setVisible(false);
@@ -545,6 +606,148 @@ public class Controller implements Initializable
            subjectsList.getItems().remove(itemPos);
     }
 
+    @FXML
+    private void setTxtStuIdBill(ActionEvent event)
+    {
+        try {
+            // getting the students personal details to the form
+            ConObj conObj = new ConObj();
+            Connection conn = conObj.getCon();
+            PreparedStatement pr = conn.prepareStatement("SELECT `First_Name`,`Middle_Name`,`Last_Name`," +
+                    "`Grade`,`Syllabus`,`Refundable Deposit` FROM `student` WHERE `Stu_Id` = ? ;");
+            pr.setString(1,txtStuIdBill.getText());
+            ResultSet rs = pr.executeQuery();
+            while(rs.next())
+            {
+                lblNameBill.setText(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
+                lblGradeBill.setText(rs.getString(4));
+                lblSyllabusBill.setText(rs.getString(5));
+                lblRefDeposit.setText(rs.getString(6));
+
+            }
+
+            // getting the list of subjects to the form
+            PreparedStatement ps = conn.prepareStatement("SELECT `subject` FROM `stu_subjects` WHERE `Stu_Id` = ?;");
+            ps.setString(1,txtStuIdBill.getText());
+            ResultSet rssub = ps.executeQuery();
+            while (rssub.next())
+            {
+//                JOptionPane.showMessageDialog(null,rssub.getString(1));
+                cmbSubjectBill.getItems().add(rssub.getString(1));
+            }
+            cmbSubjectBill.getItems().add("Admission Fee");
+            cmbSubjectBill.getItems().add("Refundable Deposit");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void setBtnAddtoTableBill(ActionEvent event)
+    {
+        Payment pmnt = new Payment();
+        boolean add = false;
+
+//        inititalising the observable list to columns
+        refIdCol.setCellValueFactory(
+                new PropertyValueFactory<Referance,String>("refID")
+        );
+        subjectCol.setCellValueFactory(
+                new PropertyValueFactory<Referance,String>("subject")
+        );
+        amountCol.setCellValueFactory(
+                new PropertyValueFactory<Referance,Double>("amount")
+        );
+
+
+        try {
+            pmnt.setStuId(txtStuIdBill.getText());
+            pmnt.setMonth(cmbMonthBill.getValue().toString());
+            pmnt.setSubject(cmbSubjectBill.getValue().toString());
+            pmnt.setMethod(cmbPaymentMethod.getValue().toString());
+            pmnt.setDescription(txtDescription.getText());
+            pmnt.setAmount( Double.parseDouble(txtAmountBill.getText()) );
+            pmnt.createRefId();
+            add = pmnt.insertToDatabase();
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(null,"Theare are uncompleted fields in your payment");
+        }
+
+
+        if(add)
+        {
+
+//            JOptionPane.showMessageDialog(null,"running");
+            ref.add(new Referance(pmnt.getRefID(),pmnt.getSubject(),pmnt.getAmount()));
+//
+//
+            tablePayments.setItems(ref);
+            billTotal += pmnt.getAmount();
+
+            lblTotalBill.setText( String.valueOf(billTotal));
+        }
+
+//        JOptionPane.showMessageDialog(null,pmnt.getRefID());
+
+    }
+
+    @FXML
+    private void setBtnPrintBill (ActionEvent event)
+    {
+        JOptionPane.showMessageDialog(null,"print bill");
+        PdfDoc doc = new PdfDoc();
+        doc.createDoc();
+    }
+
+    @FXML
+    private void setBtnDeleteTabel(ActionEvent event)
+    {
+        try {
+            Payment pmnt = new Payment();
+            Referance refDel = tablePayments.getSelectionModel().getSelectedItem();
+
+//            JOptionPane.showMessageDialog(null,refDel.getRefID());
+            boolean delete = pmnt.deleteFromDatabse(refDel.getRefID().toString());
+
+            if (delete) {
+                ref.remove(refDel);
+                billTotal -= refDel.getAmount();
+                lblTotalBill.setText(String.valueOf(billTotal));
+            } else {
+                JOptionPane.showMessageDialog(null,"Error");
+            }
+        } catch (NullPointerException npexe) {
+            JOptionPane.showMessageDialog(null,"Please selecte the item t delete ");
+        }
+
+    }
+
+    @FXML
+    public  void setBtnEditBill(ActionEvent event)
+    {
+        btnSaveBill.setVisible(true);
+        txtRefDepAmnt.setVisible(true);
+        btnEditBill.setVisible(false);
+    }
+
+    @FXML
+    public void setBtnSaveBill(ActionEvent event)
+    {
+        Payment pmnt = new Payment();
+        pmnt.setStuId(txtStuIdBill.getText());
+        double amount = Double.parseDouble(txtRefDepAmnt.getText());
+        boolean update = pmnt.updateRefDep(amount);
+        if (update)
+        {
+           lblRefDeposit.setText(String.valueOf(amount));
+            txtRefDepAmnt.setVisible(false);
+            btnSaveBill.setVisible(false);
+            btnEditBill.setVisible(true);
+           JOptionPane.showMessageDialog(null,"Refundable Deposit is successfully updated");
+        }
+
+    }
     private void fillForm(String id)
     {
         clearAll();

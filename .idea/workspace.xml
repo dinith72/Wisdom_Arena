@@ -57,7 +57,54 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="Payment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Payment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="247" column="25" lean-forward="false" selection-start-line="247" selection-start-column="25" selection-end-line="247" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1787#1788#0" expanded="true" />
+                <element signature="e#1821#1822#0" expanded="true" />
+                <element signature="e#2077#2078#0" expanded="true" />
+                <element signature="e#2106#2107#0" expanded="true" />
+                <element signature="method#createRefId#0;class#Payment#0" expanded="false" />
+                <element signature="method#deleteFromDatabse#0;class#Payment#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="745" column="39" lean-forward="false" selection-start-line="745" selection-start-column="39" selection-end-line="745" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1105#1113#0" expanded="true" />
+                <element signature="e#5083#5094#0" expanded="true" />
+                <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
+                <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
+                <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
+                <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
+                <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
+                <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+                <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+                <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+                <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+                <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+                <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+                <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
+                <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+                <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,6 +129,15 @@
       <find>cmbsub</find>
       <find>subjects</find>
       <find>subject</find>
+      <find>admiss</find>
+      <find>initi</find>
+      <find>initial</find>
+      <find>table</find>
+      <find>pay</find>
+      <find>btnde</find>
+      <find>Pay</find>
+      <find>Payment</find>
+      <find>btnEd</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -106,6 +162,10 @@
         <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Student.java" />
         <option value="$PROJECT_DIR$/src/sample/Subjects.java" />
+        <option value="$PROJECT_DIR$/src/sample/PdfDoc.java" />
+        <option value="$PROJECT_DIR$/src/sample/Bill.java" />
+        <option value="$PROJECT_DIR$/src/sample/Referance.java" />
+        <option value="$PROJECT_DIR$/src/sample/Payment.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
       </list>
     </option>
@@ -136,9 +196,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -146,6 +203,11 @@
             <path>
               <item name="Wisdom_Arena" type="b2602c69:ProjectViewProjectNode" />
               <item name="Wisdom_Arena" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Wisdom_Arena" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Wisdom_Arena" type="462c0819:PsiDirectoryNode" />
+              <item name="jar files" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Wisdom_Arena" type="b2602c69:ProjectViewProjectNode" />
@@ -162,6 +224,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -176,7 +241,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jar files/controlsfx-8.0.5.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jar files/itextpdf-5.4.5.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -335,7 +400,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -376,7 +441,27 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/Controller.java</url>
+          <line>578</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/Controller.java</url>
+          <line>270</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/Controller.java</url>
+          <line>293</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -385,13 +470,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/ConObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -400,58 +478,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1269">
           <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3672">
-          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1269">
-          <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
@@ -460,16 +494,22 @@
           <caret line="148" column="0" lean-forward="true" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -487,32 +527,35 @@
           <caret line="192" column="83" lean-forward="true" selection-start-line="192" selection-start-column="83" selection-end-line="192" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1269">
           <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
@@ -530,17 +573,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1863">
           <caret line="69" column="59" lean-forward="false" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
@@ -549,16 +589,22 @@
           <caret line="186" column="30" lean-forward="false" selection-start-line="186" selection-start-column="30" selection-end-line="186" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -576,16 +622,22 @@
           <caret line="157" column="0" lean-forward="true" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -598,17 +650,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="2079">
           <caret line="77" column="59" lean-forward="false" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
@@ -619,17 +668,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="2025">
           <caret line="75" column="59" lean-forward="false" selection-start-line="75" selection-start-column="59" selection-end-line="75" selection-end-column="59" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
@@ -638,16 +684,22 @@
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -660,17 +712,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2025">
           <caret line="75" column="59" lean-forward="false" selection-start-line="75" selection-start-column="59" selection-end-line="75" selection-end-column="59" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
@@ -679,16 +728,22 @@
           <caret line="119" column="32" lean-forward="false" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -701,17 +756,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2025">
           <caret line="75" column="59" lean-forward="false" selection-start-line="75" selection-start-column="59" selection-end-line="75" selection-end-column="59" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
@@ -720,16 +772,22 @@
           <caret line="134" column="10" lean-forward="true" selection-start-line="134" selection-start-column="10" selection-end-line="136" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -742,17 +800,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="3132">
           <caret line="116" column="33" lean-forward="false" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
@@ -761,16 +816,22 @@
           <caret line="122" column="34" lean-forward="true" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -790,17 +851,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
@@ -809,16 +867,22 @@
           <caret line="117" column="34" lean-forward="true" selection-start-line="116" selection-start-column="6" selection-end-line="117" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -836,32 +900,35 @@
           <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
@@ -877,32 +944,35 @@
           <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
@@ -913,17 +983,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
-          </folding>
+          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
@@ -932,16 +999,22 @@
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
             <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -950,13 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7479">
           <caret line="327" column="0" lean-forward="false" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ConObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="63" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -975,53 +1041,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="661" column="40" lean-forward="true" selection-start-line="661" selection-start-column="40" selection-end-line="661" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#674#682#0" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Subjects.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12">
           <caret line="65" column="31" lean-forward="true" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ConObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="63" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/util/Callback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/PdfDoc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
-            <marker date="1504241187338" expanded="true" signature="8907:10501" ph="..." />
-            <marker date="1504241187338" expanded="true" signature="22303:22405" ph="..." />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Referance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Payment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="247" column="25" lean-forward="false" selection-start-line="247" selection-start-column="25" selection-end-line="247" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1787#1788#0" expanded="true" />
+            <element signature="e#1821#1822#0" expanded="true" />
+            <element signature="e#2077#2078#0" expanded="true" />
+            <element signature="e#2106#2107#0" expanded="true" />
+            <element signature="method#createRefId#0;class#Payment#0" expanded="false" />
+            <element signature="method#deleteFromDatabse#0;class#Payment#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="745" column="39" lean-forward="false" selection-start-line="745" selection-start-column="39" selection-end-line="745" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1105#1113#0" expanded="true" />
+            <element signature="e#5083#5094#0" expanded="true" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
+            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
+            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
+            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
+            <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
+            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
