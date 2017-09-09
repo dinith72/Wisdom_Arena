@@ -1,9 +1,7 @@
 package sample;
 
-import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
@@ -16,18 +14,12 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
-import javafx.event.ActionEvent;
 //import java.sql.*;
-import javax.security.auth.Subject;
 import javax.swing.*;
-import javax.xml.soap.SOAPPart;
-import java.awt.*;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import org.controlsfx.control.textfield.TextFields ;
@@ -39,6 +31,9 @@ public class Controller implements Initializable
     List <String> stuNos = new ArrayList<String>();
     double billTotal = 0 ;
     ObservableList<Referance> ref = FXCollections.observableArrayList(
+    );
+
+    ObservableList<NotPaid> notPaid = FXCollections.observableArrayList(
     );
 
     @FXML
@@ -191,7 +186,6 @@ public class Controller implements Initializable
 
     @FXML
     public Label lblNameBill = new Label();
-
     @FXML
     public ComboBox cmbMonthBill = new ComboBox();
 
@@ -256,11 +250,23 @@ public class Controller implements Initializable
     @FXML
     public ComboBox cmbMonthReport = new ComboBox();
 
-    @FXML
-    public ComboBox cmbYearReport = new ComboBox();
 
     @FXML
     public Button btnPrintReport = new Button();
+
+    @FXML
+    public  Button btnExecuteReport = new Button();
+
+    @FXML
+    public TableView <NotPaid> notPaidTableView  = new TableView<NotPaid>();
+    @FXML
+    public TableColumn<NotPaid,String> stuNoCol = new TableColumn();
+    @FXML
+    public TableColumn<NotPaid,String> stuNameCol = new TableColumn();
+    @FXML
+    public TableColumn<NotPaid,String> subColRpt = new TableColumn();
+    @FXML
+    public TableColumn<NotPaid,String> cntNoCol = new TableColumn();
 
 //
 //    String[] stuNos = {"WA0001" , "WA0002", "WA0003"};
@@ -297,7 +303,7 @@ public class Controller implements Initializable
         cmbMonthReport.getItems().addAll("January","February","March","April","May"
                 ,"June","July","August","September","October","November","December");
 
-        cmbYearReport.getItems().addAll("2017","2018","2019");
+
 
     // date in the bill generator form
     LocalDate localDate = LocalDate.now();
@@ -462,6 +468,20 @@ public class Controller implements Initializable
         }
 
     }
+
+    @FXML void btnActive(ActionEvent event)
+    {
+        inactive.setSelected(false);
+        active.setSelected(true);
+    }
+
+    @FXML void btnInactive(ActionEvent event)
+    {
+        inactive.setSelected(true);
+        active.setSelected(false);
+    }
+
+
     @FXML
     public void menuStuRegClicked(ActionEvent event)
     {
@@ -695,9 +715,12 @@ public class Controller implements Initializable
     @FXML
     private void setBtnPrintBill (ActionEvent event)
     {
+        LocalDate localDate = LocalDate.now();
         JOptionPane.showMessageDialog(null,"print bill");
         PdfDoc doc = new PdfDoc();
+        doc.setDate("2017-12-25");
         doc.createDoc();
+
     }
 
     @FXML
@@ -748,6 +771,52 @@ public class Controller implements Initializable
         }
 
     }
+
+    @FXML
+    public void setBtnExecuteReport (ActionEvent event)
+    {
+        notPaidTableView.getItems().clear();
+        stuNoCol.setCellValueFactory(new PropertyValueFactory<NotPaid,String>("stuId"));
+        stuNameCol.setCellValueFactory(new PropertyValueFactory<NotPaid,String>("stuName"));
+        subColRpt.setCellValueFactory(new PropertyValueFactory<NotPaid,String>("stuSubject"));
+        cntNoCol.setCellValueFactory(new PropertyValueFactory<NotPaid,String>("stucontactNo"));
+//        notPaid.add(new NotPaid("wa001","dinith","p6","0767"));
+        try {
+            ConObj conObj = new ConObj();
+            Connection conn = conObj.getCon();
+            PreparedStatement ps = conn.prepareStatement("SELECT stu_subjects.Stu_Id,student.First_Name,student.Last_Name,stu_subjects.subject,student.ContactNo FROM `stu_subjects` , `student` " +
+                    "WHERE student.status = 'active' AND stu_subjects.Stu_Id = student.Stu_Id");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next())
+            {
+//                checking whether there is a payment for that perticular subject and student
+//                System.out.println(rs.getString(1)+ " "+rs.getString(4));
+                String id = rs.getString(1);
+                String sub = rs.getString(4);
+                PreparedStatement psnew = conn.prepareStatement("SELECT `Reference_ID` FROM `payments` WHERE `Stu_No`= ? AND `subject` = ? AND payments.month = ? ");
+                psnew.setString(1,id);
+                psnew.setString(2,sub);
+                psnew.setString(3,cmbMonthReport.getValue().toString());
+                ResultSet rsnew = psnew.executeQuery();
+                if(!rsnew.next())
+                {String name = rs.getString(2) + " "+ rs.getString(3);
+
+                    notPaid.add(new NotPaid(rs.getString(1),name,rs.getString(4), rs.getString(5)));
+                }
+            }
+
+
+        } catch (NullPointerException nullPoint)
+        {
+            JOptionPane.showMessageDialog(null,"Please input the relavant month");
+        }
+
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        notPaidTableView.setItems(notPaid);
+    }
+
     private void fillForm(String id)
     {
         clearAll();
