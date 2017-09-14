@@ -1,11 +1,14 @@
 package sample;
 
 import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
+import com.sun.xml.internal.fastinfoset.util.StringArray;
 
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Payment
@@ -250,4 +253,60 @@ public class Payment
 
 
     }
+
+    // this function is used in the payment history where the previous month payments are displayed
+    private  String[] mnths= new String[3];
+    public String[] getmonthHeaders()
+    {
+        
+        Calendar cal = Calendar.getInstance();
+
+//        for the first month before
+        cal.add(Calendar.MONTH,-1);
+        mnths[0] = new SimpleDateFormat("MMMM").format(cal.getTime());
+
+//        for the second month before
+        cal.add(Calendar.MONTH,-1);
+        mnths[1] = new SimpleDateFormat("MMMM").format(cal.getTime());
+
+//        for the third month before
+        cal.add(Calendar.MONTH,-1);
+        mnths[2] = new SimpleDateFormat("MMMM").format(cal.getTime());
+
+
+
+//        System.out.println(mnths[0] + mnths[1] + mnths[2]);
+
+
+        return mnths;
+    }
+    
+    public String[] getPaidAmount(String subject)
+    {
+        String []amnt = new String[3];
+        int i =0 ;
+        for (String m:mnths)
+        {
+            try {
+                ConObj conObj = new ConObj();
+                Connection conn = conObj.getCon();
+                PreparedStatement stmnt = conn.prepareStatement("SELECT amount FROM `payments` WHERE `Stu_No` = ? AND `subject` = ? AND `month` = ?");
+                stmnt.setString(1,stuId);
+                stmnt.setString(2,subject);
+                stmnt.setString(3,m);
+                ResultSet rs = stmnt.executeQuery();
+                while (rs.next())
+                {
+                    amnt[i] = rs.getString(1);
+                    i++;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+//        System.out.println(amnt[0] +" "+ amnt[1] +" "+ amnt[2]);
+        return amnt;
+    }
+
+
 }

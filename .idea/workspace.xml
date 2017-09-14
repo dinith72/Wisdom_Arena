@@ -58,16 +58,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="480" column="32" lean-forward="false" selection-start-line="480" selection-start-column="32" selection-end-line="480" selection-end-column="32" />
+            <state relative-caret-position="-1430">
+              <caret line="70" column="22" lean-forward="false" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#843#851#0" expanded="true" />
-                <element signature="e#4901#4912#0" expanded="true" />
-                <element signature="e#5732#5741#0" expanded="true" />
+                <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+                <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
                 <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
                 <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
                 <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -77,9 +76,7 @@
                 <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
                 <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
                 <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-                <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
                 <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-                <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
                 <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
                 <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
                 <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -92,33 +89,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotPaid.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/NotPaid.java">
+      <file leaf-file-name="PdfDoc.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/PdfDoc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="45" />
+            <state relative-caret-position="2862">
+              <caret line="280" column="35" lean-forward="false" selection-start-line="280" selection-start-column="35" selection-end-line="280" selection-end-column="35" />
               <folding>
-                <element signature="e#602#603#0" expanded="true" />
-                <element signature="e#636#637#0" expanded="true" />
-                <element signature="e#755#756#0" expanded="true" />
-                <element signature="e#791#792#0" expanded="true" />
-                <element signature="e#932#933#0" expanded="true" />
-                <element signature="e#971#972#0" expanded="true" />
-                <element signature="e#1126#1127#0" expanded="true" />
-                <element signature="e#1167#1168#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Referance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Referance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="40" />
-              <folding>
-                <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#716#717#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#setValues#0;class#PdfDoc#0" expanded="false" />
+                <element signature="method#setStuName#0;class#PdfDoc#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -159,6 +138,10 @@
       <find>btnEd</find>
       <find>subject</find>
       <find>active</find>
+      <find>settxt</find>
+      <find>set</find>
+      <find>subcol</find>
+      <find>btnf</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -180,17 +163,18 @@
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/ConObj.java" />
         <option value="$PROJECT_DIR$/src/sample/Guardian.java" />
-        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Student.java" />
         <option value="$PROJECT_DIR$/src/sample/Subjects.java" />
         <option value="$PROJECT_DIR$/src/sample/Bill.java" />
-        <option value="$PROJECT_DIR$/src/sample/Referance.java" />
-        <option value="$PROJECT_DIR$/src/sample/Payment.java" />
         <option value="$PROJECT_DIR$/src/sample/HeaderFooter.java" />
-        <option value="$PROJECT_DIR$/src/sample/PdfDoc.java" />
         <option value="$PROJECT_DIR$/src/sample/NotPaidTable.java" />
         <option value="$PROJECT_DIR$/src/sample/NotPaid.java" />
+        <option value="$PROJECT_DIR$/src/sample/Payment.java" />
+        <option value="$PROJECT_DIR$/src/sample/History.java" />
+        <option value="$PROJECT_DIR$/src/sample/Referance.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
+        <option value="$PROJECT_DIR$/src/sample/PdfDoc.java" />
+        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
       </list>
     </option>
   </component>
@@ -220,9 +204,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,6 +234,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -424,7 +408,6 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -450,6 +433,7 @@
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -468,30 +452,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Controller.java</url>
-          <line>598</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sample/Controller.java</url>
-          <line>276</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sample/Controller.java</url>
-          <line>299</line>
+          <line>324</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/PdfDoc.java</url>
-          <line>78</line>
+          <line>104</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -500,38 +472,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3672">
-          <caret line="148" column="0" lean-forward="true" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
-            <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnFirstClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnPreviousClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnNextClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnExecuteReport#0;class#Controller#0" expanded="false" />
-            <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
-            <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
-            <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -545,9 +485,8 @@
           <caret line="192" column="83" lean-forward="true" selection-start-line="192" selection-start-column="83" selection-end-line="192" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -557,9 +496,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -613,9 +550,8 @@
           <caret line="186" column="30" lean-forward="false" selection-start-line="186" selection-start-column="30" selection-end-line="186" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -625,9 +561,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -652,9 +586,8 @@
           <caret line="157" column="0" lean-forward="true" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -664,9 +597,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -720,9 +651,8 @@
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -732,9 +662,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -770,9 +698,8 @@
           <caret line="119" column="32" lean-forward="false" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -782,9 +709,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -820,9 +745,8 @@
           <caret line="134" column="10" lean-forward="true" selection-start-line="134" selection-start-column="10" selection-end-line="136" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -832,9 +756,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -870,9 +792,8 @@
           <caret line="122" column="34" lean-forward="true" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -882,9 +803,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -927,9 +846,8 @@
           <caret line="117" column="34" lean-forward="true" selection-start-line="116" selection-start-column="6" selection-end-line="117" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -939,9 +857,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -966,9 +882,8 @@
           <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -978,9 +893,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -1016,9 +929,8 @@
           <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -1028,9 +940,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -1077,9 +987,8 @@
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -1089,9 +998,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -1145,48 +1052,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3223">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/HeaderFooter.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/PdfDoc.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1755">
-          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Payment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3834">
-          <caret line="238" column="46" lean-forward="true" selection-start-line="237" selection-start-column="12" selection-end-line="238" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#createRefId#0;class#Payment#0" expanded="false" />
-            <element signature="method#deleteFromDatabse#0;class#Payment#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Referance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="31">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1194,36 +1064,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="45" />
-          <folding>
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#755#756#0" expanded="true" />
-            <element signature="e#791#792#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#971#972#0" expanded="true" />
-            <element signature="e#1126#1127#0" expanded="true" />
-            <element signature="e#1167#1168#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Student.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/History.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Referance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Payment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31">
-          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-          <folding />
+          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding>
+            <element signature="method#createRefId#0;class#Payment#0" expanded="false" />
+            <element signature="method#deleteFromDatabse#0;class#Payment#0" expanded="false" />
+            <element signature="method#updateRefDep#0;class#Payment#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="480" column="32" lean-forward="false" selection-start-line="480" selection-start-column="32" selection-end-line="480" selection-end-column="32" />
+        <state relative-caret-position="-1430">
+          <caret line="70" column="22" lean-forward="false" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#851#0" expanded="true" />
-            <element signature="e#4901#4912#0" expanded="true" />
-            <element signature="e#5732#5741#0" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#btnSubmitClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#btnAddNewClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuStuRegClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#menuReportClicked#0;class#Controller#0" expanded="false" />
@@ -1233,9 +1112,7 @@
             <element signature="method#btnLastClicked#0;class#Controller#0" expanded="false" />
             <element signature="method#cmbSubjectsSelected#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteSubject#0;class#Controller#0" expanded="false" />
-            <element signature="method#setTxtStuIdBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnAddtoTableBill#0;class#Controller#0" expanded="false" />
-            <element signature="method#setBtnPrintBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnDeleteTabel#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnEditBill#0;class#Controller#0" expanded="false" />
             <element signature="method#setBtnSaveBill#0;class#Controller#0" expanded="false" />
@@ -1243,6 +1120,29 @@
             <element signature="method#fillForm#0;class#Controller#0" expanded="false" />
             <element signature="method#getStuIds#0;class#Controller#0" expanded="false" />
             <element signature="method#clearAll#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="149" column="47" lean-forward="true" selection-start-line="149" selection-start-column="47" selection-end-line="149" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/PdfDoc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2862">
+          <caret line="280" column="35" lean-forward="false" selection-start-line="280" selection-start-column="35" selection-end-line="280" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setValues#0;class#PdfDoc#0" expanded="false" />
+            <element signature="method#setStuName#0;class#PdfDoc#0" expanded="false" />
           </folding>
         </state>
       </provider>

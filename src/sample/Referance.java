@@ -22,7 +22,8 @@ public class Referance {
         return refID.get();
     }
 
-    public void setRefID(String refID) {
+    public void
+    RefID(String refID) {
 
         this.refID.set(refID);
     }

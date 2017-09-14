@@ -1,5 +1,6 @@
 package sample;
 
+import com.itextpdf.text.Paragraph;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -35,6 +36,8 @@ public class Controller implements Initializable
 
     ObservableList<NotPaid> notPaid = FXCollections.observableArrayList(
     );
+
+    ObservableList<History> history = FXCollections.observableArrayList();
 
     @FXML
     SplitPane splitPane = new SplitPane();
@@ -219,6 +222,24 @@ public class Controller implements Initializable
     @FXML
     public  TextField txtAmountBill = new TextField();
 
+//    table view for the old payments
+    @FXML
+    public  TableView <History> historyTableView = new TableView<History>();
+
+    @FXML
+    public TableColumn <History,String> subColHistory = new TableColumn();
+
+    @FXML
+    public TableColumn <History,String> mnth1 = new TableColumn();
+
+    @FXML
+    public TableColumn <History,String> mnth2 = new TableColumn();
+
+    @FXML
+    public TableColumn <History,String> mnth3 = new TableColumn();
+
+//    table view for the new payment
+
     @FXML
     public TableView <Referance> tablePayments  = new TableView<Referance>();
 
@@ -239,10 +260,14 @@ public class Controller implements Initializable
     public Button btnDeleteTabel = new Button();
 
     @FXML
+    public TextField txtDiscount = new TextField();
+
+    @FXML
     public Label lblTotalBill = new Label();
 
     @FXML
     public Button btnPrintBill = new Button();
+
 
 // end of bill generation controls
 
@@ -424,6 +449,7 @@ public class Controller implements Initializable
         // JOptionPane.showMessageDialog(null,stu.getStuDateofBirth());
     }
 
+
     @FXML
     public void btnAddNewClicked(ActionEvent event)
     {
@@ -469,13 +495,15 @@ public class Controller implements Initializable
 
     }
 
-    @FXML void btnActive(ActionEvent event)
+    @FXML
+    public void btnActive(ActionEvent event)
     {
         inactive.setSelected(false);
         active.setSelected(true);
     }
 
-    @FXML void btnInactive(ActionEvent event)
+    @FXML
+    public void btnInactive(ActionEvent event)
     {
         inactive.setSelected(true);
         active.setSelected(false);
@@ -629,6 +657,10 @@ public class Controller implements Initializable
     @FXML
     private void setTxtStuIdBill(ActionEvent event)
     {
+        List<String> subjects = new ArrayList<>();
+        historyTableView.getItems().clear();
+        cmbSubjectBill.getItems().clear();
+
         try {
             // getting the students personal details to the form
             ConObj conObj = new ConObj();
@@ -640,7 +672,7 @@ public class Controller implements Initializable
             while(rs.next())
             {
                 lblNameBill.setText(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
-                lblGradeBill.setText(rs.getString(4));
+                lblGradeBill.setText( "Grade " + rs.getString(4));
                 lblSyllabusBill.setText(rs.getString(5));
                 lblRefDeposit.setText(rs.getString(6));
 
@@ -652,14 +684,52 @@ public class Controller implements Initializable
             ResultSet rssub = ps.executeQuery();
             while (rssub.next())
             {
+                subjects.add(rssub.getString(1));
 //                JOptionPane.showMessageDialog(null,rssub.getString(1));
                 cmbSubjectBill.getItems().add(rssub.getString(1));
             }
+
+
             cmbSubjectBill.getItems().add("Admission Fee");
             cmbSubjectBill.getItems().add("Refundable Deposit");
         } catch (SQLException e) {
             e.printStackTrace();
         }
+//        initilising the observable list
+        subColHistory.setCellValueFactory(
+                new PropertyValueFactory<History,String>("subject"));
+        mnth1.setCellValueFactory(
+                new PropertyValueFactory<History,String>("mon1"));
+        mnth2.setCellValueFactory(
+                new PropertyValueFactory<History,String>("mon2"));
+        mnth3.setCellValueFactory(
+                new PropertyValueFactory<History,String>("mon3"));
+//        history.add(new History("dhe","a","jul","jun"));
+
+//        Student History table
+        String []mnths ;
+        String []amnt;
+        Payment pmnt = new Payment();
+//        setting the table headers
+        mnths = pmnt.getmonthHeaders();
+        mnth1.setGraphic(new Label(mnths[0]));
+        mnth2.setGraphic(new Label(mnths[1]));
+        mnth3.setGraphic(new Label(mnths[2]));
+        pmnt.setStuId(txtStuIdBill.getText());
+        int i = 0 ;
+        for (String sub:subjects)
+        {
+//            System.out.println(subjects.get(i));
+
+            amnt = pmnt.getPaidAmount(subjects.get(i));
+            history.add(new History(subjects.get(i),amnt[0],amnt[1],amnt[2]));
+            i++;
+//            System.out.println(amnt[0] +" "+ amnt[1] +" "+ amnt[2]);
+        }
+
+//updating the table view
+
+        historyTableView.setItems(history);
     }
 
 
@@ -668,6 +738,9 @@ public class Controller implements Initializable
     {
         Payment pmnt = new Payment();
         boolean add = false;
+        double subtotal = 0.0 ;
+        double discount;
+
 
 //        inititalising the observable list to columns
         refIdCol.setCellValueFactory(
@@ -682,28 +755,47 @@ public class Controller implements Initializable
 
 
         try {
+//            calculating the discount
+            subtotal = 0.0 ;
+            if (!txtDiscount.getText().isEmpty()) {
+                discount = Double.parseDouble(txtDiscount.getText());
+            } else {
+                discount = 0.0;
+            }
+            if (discount<=100) {
+                subtotal= Double.parseDouble(txtAmountBill.getText())*(1-discount/100);
+            } else {
+                throw new ArithmeticException();
+            }
+
             pmnt.setStuId(txtStuIdBill.getText());
             pmnt.setMonth(cmbMonthBill.getValue().toString());
             pmnt.setSubject(cmbSubjectBill.getValue().toString());
             pmnt.setMethod(cmbPaymentMethod.getValue().toString());
             pmnt.setDescription(txtDescription.getText());
-            pmnt.setAmount( Double.parseDouble(txtAmountBill.getText()) );
+            pmnt.setAmount( subtotal );
             pmnt.createRefId();
             add = pmnt.insertToDatabase();
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null,"Theare are uncompleted fields in your payment");
+            e.printStackTrace();
+        }
+        catch (ArithmeticException ae)
+        {
+            JOptionPane.showMessageDialog(null,"The amount entered in the discount field is incorrect ");
         }
 
 
         if(add)
         {
 
+
 //            JOptionPane.showMessageDialog(null,"running");
-            ref.add(new Referance(pmnt.getRefID(),pmnt.getSubject(),pmnt.getAmount()));
+            ref.add(new Referance(pmnt.getRefID(),pmnt.getSubject(),subtotal));
 //
 //
             tablePayments.setItems(ref);
-            billTotal += pmnt.getAmount();
+            billTotal += subtotal ;
 
             lblTotalBill.setText( String.valueOf(billTotal));
         }
@@ -715,11 +807,33 @@ public class Controller implements Initializable
     @FXML
     private void setBtnPrintBill (ActionEvent event)
     {
+        List<String> refId = new ArrayList<String>();
+        List<String> subjects = new ArrayList<String>();
+        List<Double> amount = new ArrayList<Double>();
+        String filename = lblNameBill.getText()+"-"+cmbMonthBill.getValue().toString();
+
+
         LocalDate localDate = LocalDate.now();
         JOptionPane.showMessageDialog(null,"print bill");
         PdfDoc doc = new PdfDoc();
+        doc.setLoc("E:\\dinith work\\MyProjects\\Wisdom_Arena\\pdf_output\\"+filename+".Pdf");
+        doc.setStuName(lblNameBill.getText());
+        doc.setGrade(lblGradeBill.getText());
+        doc.setSyllabusPdf(lblSyllabusBill.getText());
+        doc.setMonth(cmbMonthBill.getValue().toString());
         doc.setDate("2017-12-25");
-        doc.createDoc();
+//        doc.createDoc();
+
+        for(int i =0 ; i < ref.size();i++)
+        {
+           refId.add(ref.get(i).getRefID()) ;
+           subjects.add(ref.get(i).getSubject());
+           amount.add(ref.get(i).getAmount());
+        }
+        doc.setValues(refId,subjects,amount);
+        doc.createDocStudentCpy();
+//        doc.createDocOfficeCpy();
+//
 
     }
 
