@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Wisdom_Arena_Dilshan.jnlp">
+  <information>
+    <title>Wisdom Arena</title>
+    <vendor>Dinith Jayabodhi</vendor>
+    <description>Simple tution class management file</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Wisdom_Arena_Dilshan.jar" size="3316181" download="eager" />
+    <jar href="jar files\controlsfx-8.0.5.jar" size="754696" download="eager" />
+    <jar href="jar files\itextpdf-5.4.5.jar" size="2102307" download="eager" />
+    <jar href="jar files\mysql-connector-java-5.1.43\mysql-connector-java-5.1.43-bin.jar" size="999018" download="eager" />
+    <jar href="jar files\mysql-connector-java-5.1.43\src\lib\c3p0-0.9.1-pre6.jar" size="531005" download="eager" />
+    <jar href="jar files\mysql-connector-java-5.1.43\src\lib\jboss-common-jdbc-wrapper-src.jar" size="35342" download="eager" />
+    <jar href="jar files\mysql-connector-java-5.1.43\src\lib\jboss-common-jdbc-wrapper.jar" size="50184" download="eager" />
+    <jar href="jar files\mysql-connector-java-5.1.43\src\lib\slf4j-api-1.6.1.jar" size="25496" download="eager" />
+    <jar href="out\artifacts\Wisdom_Arena_Dilshan_jar\Wisdom_Arena_Dilshan.jar" size="4210777" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="sample.Main"  name="Wisdom_Arena" />
+  <update check="background"/>
+</jnlp>

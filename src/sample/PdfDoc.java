@@ -8,6 +8,7 @@ import com.itextpdf.text.pdf.*;
 import com.itextpdf.text.pdf.draw.DottedLineSeparator;
 
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
@@ -46,6 +47,11 @@ public class PdfDoc
     List <String> subjects ;
     List <Double> amount ;
 
+    List<String> stuId;
+    List<String> NotPaidstuName;
+    List<String> NotPaidSubject;
+    List<String> contactNo;
+
     public PdfDoc()
     {
 
@@ -61,28 +67,38 @@ public class PdfDoc
         Document document = new Document(PageSize.A4);
 
         try {
-            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(new File(loc)));
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(loc));
             document.open();
-            document.addTitle("Wisdom Arena - Payment slip");
+            document.addTitle("Wisdom Arena - Payment Slip");
             document.addAuthor("Dinith Jayabodhi");
 
 //adding the wisdom arena logo
-            Image img = Image.getInstance("src\\sample\\assets\\images\\wanew.jpg");
+            Image img = Image.getInstance("src\\sample\\assets\\images\\wa.jpeg");
+            img.scalePercent(11,11);
             img.setAbsolutePosition(10,720);
 
             document.add(img);
 
+//            adding image tranparent image
+            Image imgbdy = Image.getInstance("src\\sample\\assets\\images\\wabdy.jpg");
+            imgbdy.scalePercent(30,30);
+            imgbdy.setAbsolutePosition(120,450);
+            imgbdy.setAlignment(Element.ALIGN_CENTER);
+            document.add(imgbdy);
+
 // adding the title to the headr and the subtitlte ( lead to Excellence)
             Paragraph title = new Paragraph("Wisdom Arena",catFont);
             title.setAlignment(Element.ALIGN_CENTER);
+            catFont.setColor(BaseColor.BLUE);
             document.add(title);
 
-            Paragraph subTitle = new Paragraph("Lead To Excellence",subFontBld);
+            Paragraph subTitle = new Paragraph("Leads to the Excellence",subFontBld);
+            subFontBld.setColor(BaseColor.BLUE);
             subTitle.setAlignment(Element.ALIGN_CENTER);
             document.add(subTitle);
 
 //adding the adress and the content to the header
-            Paragraph adress = new Paragraph("No: 106, Station Road, Kandana, Sri Lanka \n email : wisdomarena2017@gmail.com   T.P. : 0769039960",xtrasmall);
+            Paragraph adress = new Paragraph("No: 106, Station Road, Kandana, Sri Lanka \n E-mail: wisdomarena2017@gmail.com   Telephone: 0769039960",xtrasmall);
             adress.setAlignment(Element.ALIGN_CENTER);
             document.add(adress);
 
@@ -193,10 +209,17 @@ public class PdfDoc
 //            table.setTotalWidth(550);
 
             ColumnText tab = new ColumnText(writer.getDirectContent());
-            tab.setSimpleColumn(50,400,550,600);
+            tab.setSimpleColumn(50,450,550,600);
 
             tab.addElement(table);
             tab.go();
+
+//            signature line
+            ColumnText sig = new ColumnText(writer.getDirectContent());
+            sig.setSimpleColumn(425,415,575,445);
+            Paragraph prSig = new Paragraph("Signature",smallBold);
+            sig.addElement(prSig);
+            sig.go();
 
 //            end of student copy double seperator
 
@@ -218,7 +241,8 @@ public class PdfDoc
  //  *****************************************************************************************************
 
            //adding the wisdom arena logo
-            Image img2 = Image.getInstance("src\\sample\\assets\\images\\wanew.jpg");
+            Image img2 = Image.getInstance("src\\sample\\assets\\images\\wa.jpeg");
+            img2.scalePercent(11,11);
             img2.setAbsolutePosition(10,290);
 
             document.add(img2);
@@ -233,7 +257,7 @@ public class PdfDoc
             ColumnText ctSub = new ColumnText(writer.getDirectContent());
             ctSub.setSimpleColumn(36,315,559,345);
             ctSub.setAlignment(Element.ALIGN_CENTER);
-            ctSub.setText(new Phrase("Lead To Excellence",subFontBld));
+            ctSub.setText(new Phrase("Leads to the Excellence",subFontBld));
             ctSub.go();
 
             ColumnText ctAdress = new ColumnText(writer.getDirectContent());
@@ -245,12 +269,18 @@ public class PdfDoc
             ColumnText ctAdress2 = new ColumnText(writer.getDirectContent());
             ctAdress2.setSimpleColumn(36,295,559,315);
             ctAdress2.setAlignment(Element.ALIGN_CENTER);
-            ctAdress2.setText(new Paragraph("email : wisdomarena2017@gmail.com   T.P. : 0769039960",xtrasmall));
+            ctAdress2.setText(new Paragraph("E-mail: wisdomarena2017@gmail.com   Telephone: 0769039960",xtrasmall));
             ctAdress2.go();
 
 
 
-//
+//            adding image tranparent image
+//            Image imgbdy = Image.getInstance("src\\sample\\assets\\images\\wabdy.jpg");
+//            imgbdy.scalePercent(30,30);
+            imgbdy.setAbsolutePosition(120,30);
+            imgbdy.setAlignment(Element.ALIGN_CENTER);
+            document.add(imgbdy);
+
 
 //            Paragraph subTitle2 = new Paragraph("Lead To Excellence",subFontBld);
 //            subTitle2.setAlignment(Element.ALIGN_CENTER);
@@ -311,10 +341,18 @@ public class PdfDoc
 
 //adding the pdf table
             ColumnText tab2 = new ColumnText(writer.getDirectContent());
-            tab2.setSimpleColumn(50,30,550,200);
+            tab2.setSimpleColumn(50,55,550,200);
 
             tab2.addElement(table);
             tab2.go();
+
+            //            signature line
+            ColumnText sig2 = new ColumnText(writer.getDirectContent());
+            sig2.setSimpleColumn(75,20,575,50);
+            Paragraph prSig2 = new Paragraph("No Signature Required",smallBold);
+            prSig2.setAlignment(Element.ALIGN_CENTER);
+            sig2.addElement(prSig2);
+            sig2.go();
 
 
             document.close();
@@ -324,8 +362,82 @@ public class PdfDoc
         }
     }
 
+    public void createReport()// code for creating the report pdf
+    {
+        Document document = new Document(PageSize.A4);
+        try {
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(new File(loc)));
+            document.open();
+            document.addTitle("Wisdom Arena - Payment slip");
+            document.addAuthor("Dinith Jayabodhi");
+            Paragraph title = new Paragraph("Wisdom Arena",catFont);
+            title.setAlignment(Element.ALIGN_CENTER);
+            document.add(title);
+             PdfPTable table = new PdfPTable(4);
+//            adding the tittles
+            PdfPCell refNo = new PdfPCell(new Paragraph("Stu. No.",subFont));
+            refNo.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            refNo.setHorizontalAlignment(Element.ALIGN_CENTER);
+
+            PdfPCell stNme = new PdfPCell(new Paragraph("Student Name",subFont));
+            stNme.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            stNme.setHorizontalAlignment(Element.ALIGN_CENTER);
+
+            PdfPCell subject = new PdfPCell(new Paragraph("Subject",subFont));
+            subject.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            subject.setHorizontalAlignment(Element.ALIGN_CENTER);
+
+            PdfPCell cNo = new PdfPCell(new Paragraph("Contact Number",subFont));
+            cNo.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            cNo.setHorizontalAlignment(Element.ALIGN_CENTER);
+
+            table.addCell(refNo);
+            table.addCell(stNme);
+            table.addCell(subject);
+            table.addCell(cNo);
+
+            PdfPCell stufNo = new PdfPCell();
+            PdfPCell stuName = new PdfPCell();
+            PdfPCell conSubject = new PdfPCell();
+            PdfPCell conCNo = new PdfPCell();
+            for ( int i =0 ; i < stuId.size() ; i++)
+            {
+//                total+= amount.get(i);
+                stufNo = new PdfPCell(new Paragraph(stuId.get(i),small));
+//
+                table.addCell(stufNo);
+
+                stuName= new PdfPCell(new Paragraph(NotPaidstuName.get(i),small));
+
+                table.addCell(stuName);
+
+                conSubject = new PdfPCell(new Paragraph(NotPaidSubject.get(i).toString(),small));
+
+                table.addCell(conSubject);
+
+                conCNo = new PdfPCell(new Paragraph(contactNo.get(i).toString(),small));
+
+                table.addCell(conCNo);
+
+            }
 
 
+//            document.add(table);
+            ColumnText tab = new ColumnText(writer.getDirectContent());
+            tab.setSimpleColumn(50,100,550,650);
+
+            tab.addElement(table);
+
+            tab.go();
+            document.close();
+            JOptionPane.showMessageDialog(null,"Priniting Complete");
+
+        } catch (Exception exe) {
+//            JOptionPane.showMessageDialog(null,exe.printStackTrace());
+            exe.printStackTrace();
+        }
+
+    }
 
 //    get the values to the arrays
     public void setValues (List<String>r, List<String>s, List<Double> a)
@@ -337,6 +449,14 @@ public class PdfDoc
 //        {
 //            System.out.println(refId.get(i) + " " + subjects.get(i) + " " + amount.get(i));
 //        }
+    }
+
+    public void setValuesNotPaid(List<String>id,List<String>n,List<String>sub,List<String>cn)
+    {
+        stuId = id ;
+        NotPaidstuName = n ;
+        NotPaidSubject = sub ;
+        contactNo = cn ;
     }
 
 

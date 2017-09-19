@@ -4,6 +4,7 @@ import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import com.sun.xml.internal.fastinfoset.util.StringArray;
 
 import javax.swing.*;
+import java.io.Console;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -294,17 +295,21 @@ public class Payment
                 stmnt.setString(1,stuId);
                 stmnt.setString(2,subject);
                 stmnt.setString(3,m);
+                System.out.println(stuId);
+                System.out.print(subject);
+                System.out.println(m);
                 ResultSet rs = stmnt.executeQuery();
                 while (rs.next())
                 {
                     amnt[i] = rs.getString(1);
-                    i++;
+
                 }
+                i++;
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-//        System.out.println(amnt[0] +" "+ amnt[1] +" "+ amnt[2]);
+        System.out.println(amnt[0] +" "+ amnt[1] +" "+ amnt[2]);
         return amnt;
     }
 

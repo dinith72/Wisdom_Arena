@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Wisdom_Arena">
+    <output-path>$PROJECT_DIR$</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="sample.Main" />
+        <option name="description" value="Simple tution class management file" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="Wisdom Arena" />
+        <option name="vendor" value="Dinith Jayabodhi" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Wisdom_Arena_Dilshan.jar">
+        <element id="module-output" name="Wisdom_Arena_Dilshan" />
+      </element>
+    </root>
+  </artifact>
+</component>

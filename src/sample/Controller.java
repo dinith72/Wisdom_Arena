@@ -17,14 +17,19 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 //import java.sql.*;
 import javax.swing.*;
+import java.io.File;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import org.controlsfx.control.textfield.TextFields ;
 
+import javafx.stage.FileChooser;
+import org.controlsfx.control.textfield.TextFields ;
+import sun.security.action.OpenFileInputStreamAction;
+
+import java.awt.Desktop;
 
 
 public class Controller implements Initializable
@@ -304,6 +309,7 @@ public class Controller implements Initializable
        // System.out.print("runnig");
         BillGenerator.setVisible(false);
         Reports.setVisible(false);
+        hideAll();
 //
 //        student menu pannel items
 
@@ -335,7 +341,7 @@ public class Controller implements Initializable
     lblDateBill.setText(localDate.toString());
 
     // methods payments in the
-        cmbPaymentMethod.getItems().addAll("Cash","Cheque","Bamk Deposit Slip");
+        cmbPaymentMethod.getItems().addAll("Cash","Cheque","Bank Deposit Slip");
 
         //diabloing the refundale deposit amounts
         btnSaveBill.setVisible(false);
@@ -441,6 +447,13 @@ public class Controller implements Initializable
             prg.setString(7,grd.getContactNoOffice());
             prg.setString(8,grd.getEmail());
             prg.executeUpdate();
+            boolean search = stuNos.contains(txtStuId.getText());
+
+            if (search == false) {
+                stuNos.add(txtStuId.getText());
+                TextFields.bindAutoCompletion(txtStuId,stuNos);
+                TextFields.bindAutoCompletion(txtStuIdBill,stuNos);
+            }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -453,6 +466,7 @@ public class Controller implements Initializable
     @FXML
     public void btnAddNewClicked(ActionEvent event)
     {
+        unhideall(); // making all the field editable
         String curret ;
         int CurrstuNo;
 
@@ -487,8 +501,9 @@ public class Controller implements Initializable
 
             PreparedStatement prg = conn.prepareStatement("INSERT INTO `guardian`(`Stu_Id`) VALUES ( ? );");
             prg.setString(1,changedsno); // updating the guardian
-            pr.executeUpdate();
+
             prg.executeUpdate();
+            pr.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -542,6 +557,7 @@ public class Controller implements Initializable
     {
 //        JOptionPane.showMessageDialog(null,"Text changed");
         fillForm(txtStuId.getText());
+        unhideall(); // making all the field editable
     }
 
     @FXML
@@ -811,12 +827,17 @@ public class Controller implements Initializable
         List<String> subjects = new ArrayList<String>();
         List<Double> amount = new ArrayList<Double>();
         String filename = lblNameBill.getText()+"-"+cmbMonthBill.getValue().toString();
+        FileChooser fc = new FileChooser();
+        File selFile = fc.showSaveDialog(null); // obataining file path
+//        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files","*.pdf"));
+        //JOptionPane.showMessageDialog(null,selFile.getPath().toString());
 
 
         LocalDate localDate = LocalDate.now();
         JOptionPane.showMessageDialog(null,"print bill");
         PdfDoc doc = new PdfDoc();
-        doc.setLoc("E:\\dinith work\\MyProjects\\Wisdom_Arena\\pdf_output\\"+filename+".Pdf");
+//        doc.setLoc("E:\\dinith work\\MyProjects\\Wisdom_Arena\\pdf_output\\"+filename+".Pdf");
+        doc.setLoc(selFile.getPath()+"_"+filename+".Pdf");
         doc.setStuName(lblNameBill.getText());
         doc.setGrade(lblGradeBill.getText());
         doc.setSyllabusPdf(lblSyllabusBill.getText());
@@ -834,7 +855,7 @@ public class Controller implements Initializable
         doc.createDocStudentCpy();
 //        doc.createDocOfficeCpy();
 //
-
+        JOptionPane.showMessageDialog(null,"Bill prinitng succeded");
     }
 
     @FXML
@@ -929,6 +950,44 @@ public class Controller implements Initializable
             e.printStackTrace();
         }
         notPaidTableView.setItems(notPaid);
+    }
+    @FXML
+    public void setBtnPrintReport(ActionEvent event)
+    {
+        List<String> stuId = new ArrayList<>();
+        List<String> stuName = new ArrayList<>();
+        List<String> subject = new ArrayList<>();
+        List<String> conNo =  new ArrayList<>();
+
+        for(int i =0 ; i < notPaid.size();i++)
+        {
+            stuId.add(notPaid.get(i).getStuId()) ;
+            stuName.add(notPaid.get(i).getStuName());
+            subject.add(notPaid.get(i).getStuSubject());
+            conNo.add(notPaid.get(i).getStucontactNo());
+        }
+
+
+//        JFileChooser fc = new JFileChooser();
+//        JFileChooser fc = new JFileChooser();
+//        int respose = fc.showSaveDialog(SaveFile.this);
+
+        // creating the pdf doc class
+        PdfDoc doc = new PdfDoc();
+
+
+        FileChooser fc = new FileChooser();
+        File selFile = fc.showSaveDialog(null); // obataining file path
+//        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files","*.pdf"));
+       // JOptionPane.showMessageDialog(null,selFile.getPath().toString());
+        doc.setLoc(selFile.getPath()+"pdf"); // sending file path
+        doc.setValuesNotPaid(stuId,stuName,subject,conNo);
+        doc.createReport();
+
+
+
+
+
     }
 
     private void fillForm(String id)
@@ -1059,6 +1118,62 @@ public class Controller implements Initializable
 
 
 
+    }
+
+    private void  hideAll()
+    {
+        cmbGenderStu.setDisable(true);
+        txtFirstNameStu.setDisable(true);
+        txtMiddleNameStu.setDisable(true);
+        txtLastNameStu.setDisable(true);
+        dobStu.setDisable(true);
+        txtAdressStu.setDisable(true);
+        txtContactnoStu.setDisable(true);
+        txtEmailStu.setDisable(true);
+        txtSchoolStu.setDisable(true);
+
+//guardian details
+        cmbGenderGuardian.setDisable(true);
+        txtFirstNameGuardian.setDisable(true);
+        txtMiddleNameGuardian.setDisable(true);
+        txtLastNameGuardian.setDisable(true);
+        txtContactnoMobileGuardian.setDisable(true);
+        txtContactnoOfficeGuardian.setDisable(true);
+        txtContactnoHomeGuardian.setDisable(true);
+        txtEmailGuardian.setDisable(true);
+
+        dateOfAdmission.setDisable(true);
+        cmbSubjects.setDisable(true);
+        grade.setDisable(true);
+        syllabus.setDisable(true);
+    }
+
+    private void unhideall()
+    {
+        cmbGenderStu.setDisable(false);
+        txtFirstNameStu.setDisable(false);
+        txtMiddleNameStu.setDisable(false);
+        txtLastNameStu.setDisable(false);
+        dobStu.setDisable(false);
+        txtAdressStu.setDisable(false);
+        txtContactnoStu.setDisable(false);
+        txtEmailStu.setDisable(false);
+        txtSchoolStu.setDisable(false);
+
+//guardian details
+        cmbGenderGuardian.setDisable(false);
+        txtFirstNameGuardian.setDisable(false);
+        txtMiddleNameGuardian.setDisable(false);
+        txtLastNameGuardian.setDisable(false);
+        txtContactnoMobileGuardian.setDisable(false);
+        txtContactnoOfficeGuardian.setDisable(false);
+        txtContactnoHomeGuardian.setDisable(false);
+        txtEmailGuardian.setDisable(false);
+
+        dateOfAdmission.setDisable(false);
+        cmbSubjects.setDisable(false);
+        grade.setDisable(false);
+        syllabus.setDisable(false);
     }
 }
 
